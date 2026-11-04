@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ticket Booking</title>
+</head>
+<body>
+
+    <!--
+    ===================================================================
+    PART 1: IDENTIFIED AND CORRECTED ERRORS FROM GIVEN CODE
+    ===================================================================
+    1.Line 1 Incomplete DOCTYPE syntax (`<!DOCTYPE>`)
+    2.Line 9 Mismatched closing tag order (`<h1><span></h1></span>`)
+    3.Lines 11 & 36    Block elements nested inside an inline `<span>` tag
+    4.Line 13  Unescaped `<` character and broken `&amp` entity
+    5.Line 14  String concatenation instead of number addition in JS formula
+    6.Line 18  Misspelled input attribute (`type="emial"`) 
+    7.Lines 22 & 23 Mismatched `list` attribute value (`movies` vs `movielist`)
+    8.Line 32  Inverted slider limits (`min="5" max="1"`)
+    9.Line 33  Wrong ID reference (`kid`) inside `<output for="...">`
+    10.Line 38  Incorrect entity capitalization (`&Copy;`)
+    11.Lines 40–42  Duplicate and corrupted closing tags at the end of the file Removed extra tags.
+    ===================================================================
+    -->
+
+    <!-- Header Section -->
+    <div id="header">
+        <h1>e-Ticket <span>Your Campus Cinema</span></h1>
+    </div>
+
+    <!-- Main Content Section: Booking Form -->
+    <div id="content">
+        <h2>Book Your Ticket</h2>
+        <p>Promotion: tickets &lt; RM10 for students &amp; staff!</p>
+        
+        <form action="booking.php" method="post" oninput="total.value = (parseInt(adult.value)||0) + (parseInt(child.value)||0); price.value = (parseInt(adult.value)||0) * 12 + (parseInt(child.value)||0) * 8;">
+            
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus>
+            </p>
+
+            <!-- Part 2 Extension: Phone Number Input -->
+            <p>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 012-3456789" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="date">Show date:</label><br>
+                <input type="date" id="date" name="date">
+            </p>
+
+            <!-- Part 2 Extension: Show Time Input -->
+            <p>
+                <label for="time">Show time:</label><br>
+                <input type="time" id="time" name="time">
+            </p>
+
+            <p>
+                <label for="movie">Movie:</label><br>
+                <input id="movie" name="movie" list="movielist" placeholder="Select or type a movie"><br>
+                <datalist id="movielist">
+                    <option value="Space Rangers">
+                    <option value="Kampung Comedy">
+                    <option value="Cyber Odyssey">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="adult">Adult tickets (RM 12 each):</label><br>
+                <input type="number" id="adult" name="adult" value="0" min="0">
+            </p>
+
+            <p>
+                <label for="child">Child tickets (RM 8 each):</label><br>
+                <input type="number" id="child" name="child" value="0" min="0">
+            </p>
+
+            <p>
+                <label for="rating">Rate our service (1 to 5):</label><br>
+                <input type="range" id="rating" name="rating" min="1" max="5" value="3">
+            </p>
+
+            <!-- Part 1 Fix: Total Tickets Output & Part 2 Extension: Total Price Output -->
+            <p>
+                Total tickets: <output name="total" for="adult child">0</output><br>
+                Total price (RM): <output name="price" for="adult child">0</output>
+            </p>
+
+            <p>
+                <input type="submit" value="Book Now">
+            </p>
+        </form>
+    </div>
+
+    <!-- Part 2 Extension: Sidebar Section with Now Showing Movies -->
+    <div id="sidebar">
+        <h3>Now Showing</h3>
+        <ul>
+            <li>
+                <strong>Space Rangers</strong> - <span>PG-13</span> 
+                (<a href="https://www.youtube.com" target="_blank">Watch Trailer</a>)
+            </li>
+            <li>
+                <strong>Kampung Comedy</strong> - <span>G</span> 
+                (<a href="https://www.youtube.com" target="_blank">Watch Trailer</a>)
+            </li>
+            <li>
+                <strong>Cyber Odyssey</strong> - <span>R</span> 
+                (<a href="https://www.youtube.com" target="_blank">Watch Trailer</a>)
+            </li>
+        </ul>
+    </div>
+
+    <!-- Part 2 Extension: Footer Section with HTML Entities -->
+    <div id="footer">
+        <p>&copy; 2026 CineKampus. All rights reserved.</p>
+        <p>e-Ticket&reg; &ndash; Campus Cinema &lt; RM10 every Tuesday &amp; Thursday</p>
+    </div>
+
+</body>
+</html>
