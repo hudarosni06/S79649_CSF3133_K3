@@ -1,0 +1,114 @@
+/* Body Background & Google Font Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eaf2f8;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #1b365d;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: #d6e4f0;
+}
+
+/* Horizontal Navigation Bar (from Section 5.9) */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0f2342;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li a:hover {
+    background-color: #f37021;
+    color: #ffffff;
+}
+
+/* Section & Article Layout */
+section {
+    width: 85%;
+    max-width: 960px;
+    margin: 25px auto;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+article h2, article h3 {
+    color: #1b365d;
+    margin-top: 0;
+}
+
+article p {
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+/* Table Styling (from Section 5.8) */
+#umt-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#umt-table td, #umt-table th {
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+#umt-table tr:nth-child(even) {
+    background-color: #f4f8fb;
+}
+
+#umt-table tr:hover {
+    background-color: #fff3e6;
+}
+
+#umt-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1b365d;
+    color: #ffffff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #dce6ed;
+    color: #333333;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
