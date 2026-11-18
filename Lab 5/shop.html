@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Bookstore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+<!--
+Error 1 (shop.html, Line 7): Changed rel="stylesheets" to rel="stylesheet" so the external CSS file loads properly.
+Error 2 (shop.html, Line 10): Moved <style> from inside <body> into <head> to fix invalid HTML5 structure.
+Error 3 (shop.html, Line 18): Fixed invalid inline CSS syntax style="color=#1B4F72;" to style="color: #1B4F72;" (replaced '=' with ':').
+Error 4 (shop.html, Line 20): Changed table id="product" to id="products" so it matches the #products selector in shop.css.
+Error 5 (shop.css, Line 2): Fixed misspelled font name 'Robotto' to 'Roboto'.
+Error 6 (shop.css, Line 4): Fixed background-repeat: no repeat; to background-repeat: no-repeat; (added missing hyphen).
+Error 7 (shop.css, Line 5): Fixed misspelled property bacground-position to background-position (added missing 'k').
+Error 8 (shop.css, Line 18): Changed li a display: inline; to display: block; so padding applies properly on the menu links.
+Error 9 (shop.css, Line 23): Fixed invalid selector li:a:hover to li a:hover (removed extra colon).
+Error 10 (shop.css, Line 27): Fixed invalid value border-collapse: collapsed; to border-collapse: collapse;.
+Error 11 (shop.css, Line 34): Changed #products tr:nth-child(2) to #products tr:nth-child(even) to style all even rows grey.
+Error 12 (shop.css, Line 37): Fixed invalid pseudo-class #products tr:hovered to #products tr:hover.
+-->
+
+<header id="home">
+    <h1>Campus Bookstore</h1>
+    <p>Textbooks, stationery and more for every student.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="books">
+        <h2>Featured Campus Items</h2>
+        <p>
+            Welcome to the Campus Bookstore. Browse our selection of essential textbooks, quality stationery, and everyday study gadgets available at student-friendly prices.
+        </p>
+
+        <table id="products">
+            <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Price (RM)</th>
+            </tr>
+            <tr>
+                <td>Web Design Basics</td>
+                <td>Textbook</td>
+                <td class="price">45.00</td>
+            </tr>
+            <tr>
+                <td>A4 Notebook</td>
+                <td>Stationery</td>
+                <td class="price">6.50</td>
+            </tr>
+            <tr>
+                <td>USB Drive 32GB</td>
+                <td>Gadget</td>
+                <td class="price">25.00</td>
+            </tr>
+            <tr>
+                <td>Highlighter Set</td>
+                <td>Stationery</td>
+                <td class="price">9.90</td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+<footer id="contact">
+    <p>&copy; 2026 Campus Bookstore &middot; Student Centre, Ground Floor</p>
+</footer>
+
+</body>
+</html>
