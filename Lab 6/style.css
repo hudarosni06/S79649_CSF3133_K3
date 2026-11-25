@@ -1,180 +1,136 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* General Page Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin: 0;
     padding: 20px;
 }
 
-.quiz-container {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
+/* Header Styling */
 header {
-    background-color: #2563eb;
+    background-color: #164e78;
     color: white;
-    padding: 24px;
-    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 header h1 {
-    font-size: 1.6rem;
-    margin-bottom: 6px;
+    margin: 0 0 8px 0;
 }
 
 header p {
-    font-size: 0.95rem;
-    opacity: 0.9;
+    margin: 0;
+    font-size: 14px;
 }
 
-main {
-    padding: 24px;
-}
-
-.status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8fafc;
-    padding: 10px 14px;
+/* Section Card Containers */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e4e8;
     border-radius: 8px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: 1px solid #e2e8f0;
+    padding: 18px;
+    margin-bottom: 15px;
 }
 
-#timer {
-    color: #dc2626;
+/* Input Field Styling */
+input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 8px;
 }
 
-#question-text {
-    font-size: 1.2rem;
-    margin-bottom: 18px;
-    line-height: 1.4;
-}
-
-.options-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.option-btn {
-    padding: 12px 16px;
-    text-align: left;
-    background-color: #f8fafc;
-    border: 2px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.option-btn:hover:not(:disabled) {
-    background-color: #e0e7ff;
-    border-color: #2563eb;
-}
-
-.option-btn.selected {
-    background-color: #dbeafe;
-    border-color: #2563eb;
-    font-weight: 600;
-}
-
-.option-btn.correct {
-    background-color: #dcfce7;
-    border-color: #16a34a;
-    color: #14532d;
-}
-
-.option-btn.incorrect {
-    background-color: #fee2e2;
-    border-color: #dc2626;
-    color: #7f1d1d;
-}
-
-.feedback {
-    margin-top: 18px;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.feedback.correct {
-    background-color: #dcfce7;
-    color: #15803d;
-}
-
-.feedback.incorrect {
-    background-color: #fee2e2;
-    color: #b91c1c;
-}
-
-.controls {
-    margin-top: 22px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.controls button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
+/* Button Styling & Hover Effect */
+button {
+    padding: 8px 16px;
+    background-color: #2980b9;
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
+    font-size: 14px;
     cursor: pointer;
+    margin-right: 6px;
     transition: background-color 0.2s ease;
 }
 
-#submit-btn {
-    background-color: #2563eb;
+button:hover {
+    background-color: #1c5980;
+}
+
+/* Game Arena & Fixed Image Sizing */
+.arena {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.fighter {
+    text-align: center;
+}
+
+.fighter img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.vs-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+/* Result & Scoreboard Styling */
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.scoreboard span {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* History Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #164e78;
     color: white;
 }
 
-#submit-btn:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-#submit-btn:hover:not(:disabled) {
-    background-color: #1d4ed8;
-}
-
-#next-btn, #restart-btn {
-    background-color: #16a34a;
-    color: white;
-}
-
-#next-btn:hover, #restart-btn:hover {
-    background-color: #15803d;
+/* Summary & Footer Styling */
+#summaryText {
+    font-weight: bold;
+    margin-top: 12px;
+    color: #164e78;
 }
 
 footer {
-    background-color: #f8fafc;
-    padding: 16px 24px;
     text-align: center;
-    border-top: 1px solid #e2e8f0;
-    font-weight: 600;
-    color: #1e293b;
-}
-
-.hidden {
-    display: none;
+    color: #666;
+    font-size: 14px;
+    margin-top: 20px;
 }
